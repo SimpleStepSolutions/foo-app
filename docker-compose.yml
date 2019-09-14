@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  foo-app-postgres:
+    image: postgres:11-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=foodb
+    ports:
+      - 5432:5432
