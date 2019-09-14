@@ -1,0 +1,496 @@
+
+Showing logs for build [32msimplestepsolutions-foo-app-mas-1[0m stage [32mmeta-pipeline[0m and container [32mstep-credential-initializer-mq7j9[0m
+{"level":"warn","ts":1568487342.4334464,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568487342.4339216,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32msimplestepsolutions-foo-app-mas-1[0m stage [32mmeta-pipeline[0m and container [32mstep-working-dir-initializer-59bd6[0m
+{"level":"warn","ts":1568487343.4300227,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1568487343.4330854,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32msimplestepsolutions-foo-app-mas-1[0m stage [32mmeta-pipeline[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32msimplestepsolutions-foo-app-mas-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-simplestepsolutions-foo-ap-lrbtj[0m
+{"level":"warn","ts":1568487349.4396505,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568487349.7425632,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/SimpleStepSolutions/foo-app.git @ master in path /workspace/source"}
+
+Showing logs for build [32msimplestepsolutions-foo-app-mas-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32msimplestepsolutions-foo-app-mas-1[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+SKIP merge-pull-refs: Nothing to merge
+
+Showing logs for build [32msimplestepsolutions-foo-app-mas-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+Deleting and cloning the Jenkins X versions repo
+Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+Effective pipeline written to jenkins-x-effective.yml
+
+Showing logs for build [32msimplestepsolutions-foo-app-mas-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-tekton-crds[0m
+running command: echo \$(**-release-version) > VERSION
+
+running command: mvn versions:set -DnewVersion=\$(cat VERSION)
+Picked up _JAVA_OPTIONS: -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.example:foo-app >-------------------------
+[INFO] Building foo-app 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- versions-maven-plugin:2.7:set (default-cli) @ foo-app ---
+[INFO] Searching for local aggregator root...
+[INFO] Local aggregation root: /workspace/source
+[INFO] Processing change of com.example:foo-app:0.0.1-SNAPSHOT -> 0.0.1
+[INFO] Processing com.example:foo-app
+[INFO]     Updating project com.example:foo-app
+[INFO]         from version 0.0.1-SNAPSHOT to 0.0.1
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  43.186 s
+[INFO] Finished at: 2019-09-14T18:56:40Z
+[INFO] ------------------------------------------------------------------------
+
+running command: ** step tag --version \$(cat VERSION)
+Updating chart version in charts/foo-app/Chart.yaml to 0.0.1
+Updating repository in charts/foo-app/values.yaml to gcr.io/simple-step-boot/foo-app
+Updating tag in charts/foo-app/values.yaml to 0.0.1
+Tag v0.0.1 created and pushed to remote origin
+
+PipelineActivity for SimpleStepSolutions-foo-app-master-1
+Applying changes 
+upserted PipelineResource simplestepsolutions-foo-app-mas for the git repository https://github.com/SimpleStepSolutions/foo-app.git
+upserted Task simplestepsolutions-foo-app-mas-from-build-pack-1
+upserted Pipeline simplestepsolutions-foo-app-mas-1
+created PipelineRun simplestepsolutions-foo-app-mas-1
+created PipelineStructure simplestepsolutions-foo-app-mas-1
+
+Showing logs for build [32msimplestepsolutions-foo-app-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-rj6rq[0m
+{"level":"warn","ts":1568487405.072063,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568487405.0728366,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32msimplestepsolutions-foo-app-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-bxvn6[0m
+{"level":"warn","ts":1568487406.4125018,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1568487406.414082,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/foo-app\""}
+
+Showing logs for build [32msimplestepsolutions-foo-app-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32msimplestepsolutions-foo-app-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-simplestepsolutions-foo-app-mas-tqkdb[0m
+{"level":"warn","ts":1568487417.5113373,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568487417.8779194,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/SimpleStepSolutions/foo-app.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32msimplestepsolutions-foo-app-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32msimplestepsolutions-foo-app-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32msimplestepsolutions-foo-app-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-mvn-deploy[0m
+Picked up _JAVA_OPTIONS: -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.example:foo-app >-------------------------
+[INFO] Building foo-app 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ foo-app ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ foo-app ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ foo-app ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /workspace/source/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ foo-app ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /workspace/source/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ foo-app ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /workspace/source/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M1:test (default-test) @ foo-app ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.fooapp.FooAppApplicationTests
+18:57:30.229 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.example.fooapp.FooAppApplicationTests]
+18:57:30.251 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+18:57:30.273 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+18:57:30.325 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.example.fooapp.FooAppApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+18:57:30.373 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.fooapp.FooAppApplicationTests], using SpringBootContextLoader
+18:57:30.385 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.fooapp.FooAppApplicationTests]: class path resource [com/example/fooapp/FooAppApplicationTests-context.xml] does not exist
+18:57:30.392 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.fooapp.FooAppApplicationTests]: class path resource [com/example/fooapp/FooAppApplicationTestsContext.groovy] does not exist
+18:57:30.402 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.example.fooapp.FooAppApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+18:57:30.407 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.fooapp.FooAppApplicationTests]: FooAppApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:57:30.515 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.example.fooapp.FooAppApplicationTests]
+18:57:30.680 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/workspace/source/target/classes/com/example/fooapp/FooAppApplication.class]
+18:57:30.711 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.fooapp.FooAppApplication for test class com.example.fooapp.FooAppApplicationTests
+18:57:30.840 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.example.fooapp.FooAppApplicationTests]: using defaults.
+18:57:30.844 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+18:57:30.873 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@9f116cc, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@12468a38, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1aa7ecca, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@59309333, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5876a9af, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7ec7ffd3, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5b239d7d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6572421, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6b81ce95, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2a798d51, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6d763516, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@52bf72b5]
+18:57:30.875 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.example.fooapp.FooAppApplicationTests]
+18:57:30.875 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.example.fooapp.FooAppApplicationTests]
+18:57:30.877 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.example.fooapp.FooAppApplicationTests]
+18:57:30.877 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.example.fooapp.FooAppApplicationTests]
+18:57:30.878 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.example.fooapp.FooAppApplicationTests]
+18:57:30.878 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.example.fooapp.FooAppApplicationTests]
+18:57:30.882 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@57a3af25 testClass = FooAppApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2b662a77 testClass = FooAppApplicationTests, locations = '{}', classes = '{class com.example.fooapp.FooAppApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@ea1a8d5, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@30a3107a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@c46bcd4, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@29b5cd00], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+18:57:30.883 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.example.fooapp.FooAppApplicationTests]
+18:57:30.883 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.example.fooapp.FooAppApplicationTests]
+18:57:30.927 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.8.RELEASE)
+
+2019-09-14 18:57:31.697  INFO 67 --- [           main] c.example.fooapp.FooAppApplicationTests  : Starting FooAppApplicationTests on simplestepsolutions-foo-app-mas-1-from-build-pack-n4wlr-pod-739 with PID 67 (started by root in /workspace/source)
+2019-09-14 18:57:31.704  INFO 67 --- [           main] c.example.fooapp.FooAppApplicationTests  : No active profile set, falling back to default profiles: default
+2019-09-14 18:57:34.206  INFO 67 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-14 18:57:34.316  INFO 67 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98ms. Found 1 repository interfaces.
+2019-09-14 18:57:35.647  INFO 67 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7dfeb1e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-14 18:57:36.227  INFO 67 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 5.2.4 by Boxfuse
+2019-09-14 18:57:36.254  INFO 67 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-09-14 18:57:37.302 ERROR 67 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:280) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:195) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.Driver.makeConnection(Driver.java:458) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.Driver.connect(Driver.java:260) ~[postgresql-42.2.6.jar:42.2.6]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.2.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:56) [flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.database.DatabaseFactory.createDatabase(DatabaseFactory.java:72) [flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.execute(Flyway.java:1670) [flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:1356) [flyway-core-5.2.4.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:65) [spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:307) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) ~[spring-boot-test-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365) ~[surefire-junit4-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273) ~[surefire-junit4-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238) ~[surefire-junit4-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159) ~[surefire-junit4-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) ~[surefire-booter-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) ~[surefire-booter-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) ~[surefire-booter-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) ~[surefire-booter-3.0.0-M1.jar:3.0.0-M1]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_222]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_222]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_222]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_222]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_222]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_222]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:75) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:91) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:192) ~[postgresql-42.2.6.jar:42.2.6]
+	... 62 common frames omitted
+
+2019-09-14 18:57:37.330  WARN 67 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.internal.exception.FlywaySqlException: 
+Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+2019-09-14 18:57:37.360  INFO 67 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-09-14 18:57:37.365 ERROR 67 --- [           main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.internal.exception.FlywaySqlException: 
+Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:307) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) [spring-boot-test-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365) [surefire-junit4-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273) [surefire-junit4-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238) [surefire-junit4-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159) [surefire-junit4-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-3.0.0-M1.jar:3.0.0-M1]
+Caused by: org.flywaydb.core.internal.exception.FlywaySqlException: 
+Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.database.DatabaseFactory.createDatabase(DatabaseFactory.java:72) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.execute(Flyway.java:1670) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:1356) ~[flyway-core-5.2.4.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:65) ~[spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	... 44 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:280) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:195) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.Driver.makeConnection(Driver.java:458) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.Driver.connect(Driver.java:260) ~[postgresql-42.2.6.jar:42.2.6]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.2.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:56) ~[flyway-core-5.2.4.jar:na]
+	... 50 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_222]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_222]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_222]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_222]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_222]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_222]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:75) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:91) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:192) ~[postgresql-42.2.6.jar:42.2.6]
+	... 62 common frames omitted
+
+2019-09-14 18:57:37.385 ERROR 67 --- [           main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@9f116cc] to prepare test instance [com.example.fooapp.FooAppApplicationTests@9d3c67]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365) [surefire-junit4-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273) [surefire-junit4-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238) [surefire-junit4-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159) [surefire-junit4-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-3.0.0-M1.jar:3.0.0-M1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-3.0.0-M1.jar:3.0.0-M1]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.internal.exception.FlywaySqlException: 
+Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:307) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) ~[spring-boot-test-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) ~[spring-test-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	... 27 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.FlywaySqlException: 
+Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.database.DatabaseFactory.createDatabase(DatabaseFactory.java:72) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.execute(Flyway.java:1670) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:1356) ~[flyway-core-5.2.4.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:65) ~[spring-boot-autoconfigure-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	... 44 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:280) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:195) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.Driver.makeConnection(Driver.java:458) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.Driver.connect(Driver.java:260) ~[postgresql-42.2.6.jar:42.2.6]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.2.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:56) ~[flyway-core-5.2.4.jar:na]
+	... 50 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_222]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_222]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_222]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_222]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_222]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_222]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:75) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:91) ~[postgresql-42.2.6.jar:42.2.6]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:192) ~[postgresql-42.2.6.jar:42.2.6]
+	... 62 common frames omitted
+
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 7.484 s <<< FAILURE! - in com.example.fooapp.FooAppApplicationTests
+[ERROR] contextLoads(com.example.fooapp.FooAppApplicationTests)  Time elapsed: 0.013 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.internal.exception.FlywaySqlException: 
+Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+Caused by: org.flywaydb.core.internal.exception.FlywaySqlException: 
+
+Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   FooAppApplicationTests.contextLoads » IllegalState Failed to load ApplicationC...
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  36.340 s
+[INFO] Finished at: 2019-09-14T18:57:37Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M1:test (default-test) on project foo-app: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /workspace/source/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-mvn-deploy'. The execution of the pipeline has stopped.[0m
